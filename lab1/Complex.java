@@ -14,6 +14,16 @@ class Complex{
     imag = i;
   }
 
+  public double getReal()
+  {
+    return real;
+  }
+
+  public double getImag()
+  {
+    return imag;
+  }
+
   public Complex conj()
   {
     return new Complex(real, -imag);
