@@ -69,7 +69,7 @@ class QuadraticEquation{
     {
       if(Double.isInfinite(root_1) || Double.isInfinite(root_2))
       {
-        System.out.println("Error: Numbers are to small for calculation.");
+        System.out.println("Error: Parameters are too small or too big for calculation.");
         System.exit(2);
       }
       if(equation_state == states.ONE_ROOT)
@@ -80,12 +80,14 @@ class QuadraticEquation{
       }
       else if(equation_state == states.TWO_ROOTS)
       {
+        System.out.print("The equation: "+a+"x^2+"+b+"x+"+c+" has ");
         System.out.println("two solutions in real numbers");
         System.out.println("x1 = " + root_1);
         System.out.println("x2 = " + root_2);
       }
       else if(equation_state == states.RESULT_IN_COMPLEX)
       {
+        System.out.print("The equation: "+a+"x^2+"+b+"x+"+c+" has ");
         System.out.println("two solutions in complex numbers");
         System.out.println("x1 = " + complex_root_1.toString());
         System.out.println("x2 = " + complex_root_2.toString());
