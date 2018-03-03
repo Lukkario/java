@@ -26,7 +26,7 @@ public class QuadraticSolver{
       c = Double.parseDouble(args[2].replace(",","."));
     }
     catch (NumberFormatException e) {
-      System.out.println("Exception: Could not parse input to double.\n" + e.getMessage());
+      System.out.println("Error: Could not parse input "+e.getMessage()+" to double.\n");
       System.exit(2);
     }
     eq = new QuadraticEquation(a,b,c);

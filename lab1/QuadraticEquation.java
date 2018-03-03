@@ -76,7 +76,7 @@ class QuadraticEquation{
       {
         System.out.print("The equation: "+a+"x^2+"+b+"x+"+c+" has ");
         System.out.println("one solution");
-        System.out.println("x1 = " + root_1);
+        System.out.println("x = " + root_1);
       }
       else if(equation_state == states.TWO_ROOTS)
       {
