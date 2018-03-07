@@ -84,7 +84,7 @@ class Engine{
 
   private void printSummary()
   {
-    System.out.print("Nubmer "+numberToBeGuessed+" is correct. It took you "+guessCounter);
+    System.out.print("Number "+numberToBeGuessed+" is correct. It took you "+guessCounter);
     if(guessCounter == 1)
     {
       System.out.println(" try.");
