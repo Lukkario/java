@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Game{
   public static void main(String[] args)
   {
@@ -5,6 +7,7 @@ class Game{
     if(args.length != 1)
     {
       printUsage();
+      System.exit(1);
     }
 
     try
@@ -16,17 +19,24 @@ class Game{
       System.exit(2);
     }
 
+    if(userRange <= 0)
+    {
+      System.out.println("Error: N must be greater than 0");
+      printUsage();
+      System.exit(1);
+    }
+
     Engine ourGame = new Engine(userRange);
     ourGame.startGame();
-    return 0;
-
-
+    Scanner in = new Scanner(System.in);
+    System.exit(0);
   }
 
   private static void printUsage()
   {
-    System.out.println("Usage: ");
-    System.exit(1);
+    System.out.println("Simple number guessing game from 0 to N.");
+    System.out.println("Usage: java Game <N>");
+    System.out.println("\tN - (int) - upper range.");
   }
 
 }

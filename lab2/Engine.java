@@ -28,6 +28,7 @@ class Engine{
   {
     Random rand = new Random();
     numberToBeGuessed = rand.nextInt(maxRange+1);
+    //System.out.println(numberToBeGuessed);
   }
 
   private void incrementGuessCounter()
@@ -43,6 +44,7 @@ class Engine{
   private void play(Scanner input)
   {
     System.out.println("Guess the number. Good luck! :)");
+    System.out.print("> ");
     int guess = getUserNumber(input);
     while(guess != numberToBeGuessed)
     {
@@ -50,12 +52,14 @@ class Engine{
       {
         System.out.println("The number is bigger.");
         incrementGuessCounter();
+        System.out.print("> ");
         guess = getUserNumber(input);
       }
       else
       {
         System.out.println("The number is smaller.");
         incrementGuessCounter();
+        System.out.print("> ");
         guess = getUserNumber(input);
       }
     }
@@ -80,20 +84,27 @@ class Engine{
 
   private void printSummary()
   {
-    System.out.println("Nubmer "+numberToBeGuessed+" is correct. It took you "+guessCounter+" tries.");
-    System.out.print("Do you wish to play again? [Y/n] ");
+    System.out.print("Nubmer "+numberToBeGuessed+" is correct. It took you "+guessCounter);
+    if(guessCounter == 1)
+    {
+      System.out.println(" try.");
+    }
+    else
+    {
+      System.out.println(" tries.");
+    }
   }
 
-  public void restartGame(Scanner input)
+  private void restartGame(Scanner input)
   {
     setNuberToGuess();
     resetCounter();
     play(input);
   }
 
-
   private boolean ifResetGame(Scanner input)
   {
+    System.out.print("Do you wish to play again? [Y/n] ");
     String choice = input.nextLine();
     while(!choice.equals("Y") && !choice.equals("y") && !choice.equals("") && !choice.equals("N") && !choice.equals("n"))
     {
