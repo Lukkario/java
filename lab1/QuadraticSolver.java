@@ -29,6 +29,13 @@ public class QuadraticSolver{
       System.out.println("Error: Could not parse input "+e.getMessage()+" to double.\n");
       System.exit(2);
     }
+
+    if(a == 0)
+    {
+      System.out.println("This is not a quadratic equation.");
+      System.exit(3);
+    }
+
     eq = new QuadraticEquation(a,b,c);
     eq.solve();
     eq.printResult();

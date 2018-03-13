@@ -20,25 +20,19 @@ class QuadraticEquation{
   QuadraticEquation(double init_a, double init_b, double init_c)
   {
     a = init_a;
-    if(a == 0)
-    {
-      System.out.println("This is not a quadratic equation.");
-      System.exit(3);
-    }
     b = init_b;
     c = init_c;
     equation_state = states.NOT_CALCULATED;
   }
 
-  private double calculateDelta()
+  private void calculateDelta()
   {
-    return b*b-4.0*a*c;
+    delta = b*b-4.0*a*c;
   }
 
   public void solve()
   {
-    delta = calculateDelta();
-    // System.out.println(Double.toString(delta));
+    calculateDelta();
     if(delta > 0.0d)
     {
         root_1 = (-b-Math.sqrt(delta))/(2.0*a);
